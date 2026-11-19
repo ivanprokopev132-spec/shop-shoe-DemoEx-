@@ -1,4 +1,3 @@
--- Создание базы данных
 CREATE DATABASE IF NOT EXISTS `Shaurma21` 
   DEFAULT CHARACTER SET utf8mb4 
   COLLATE utf8mb4_unicode_ci;
@@ -109,8 +108,6 @@ CREATE TABLE `prodorders` (
   CONSTRAINT `fk_prodorders_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-USE shaurma21;
-
 INSERT INTO categories (id, name) VALUES 
 (1, 'Женская обувь'), (2, 'Мужская обувь');
 
@@ -209,14 +206,11 @@ INSERT INTO prodorders (id, order_id, product_id, qty) VALUES
 (13, 7, 5, 10), (14, 7, 6, 10), (15, 8, 7, 5), (16, 8, 8, 4),
 (17, 9, 9, 5), (18, 9, 10, 1), (19, 10, 11, 5), (20, 10, 12, 5);
 
--- Справочники
 SELECT * FROM categories;
 SELECT * FROM manufacturers;
 SELECT * FROM suppliers;
 SELECT * FROM roles;
 SELECT * FROM orderstatus;
-
--- Основные таблицы
 SELECT * FROM products;
 SELECT * FROM users;
 SELECT * FROM pvz;
